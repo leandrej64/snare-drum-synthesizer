@@ -3,7 +3,7 @@ import numpy as np
 
 class Snare(Instrument):
 
-    def __init__(self,frequency,decay,sampling_frequency=44100,duration=0.3,impact=0.01):
+    def __init__(self,frequency,decay,sampling_frequency=44100,duration=0.2,impact=0.01):
         super().__init__()
         self.frequency = frequency
         self.decay = decay 

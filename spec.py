@@ -4,11 +4,12 @@ import numpy as np
 
 class Spectrogram:
     
-    def __init__(self, wave, sampling_frequency=44100, nperseg=256, fmax=1000):
+    def __init__(self, wave, sampling_frequency=44100, nperseg=512, fmax=1000):
         self.sampling_frequency = sampling_frequency
         self.fmax = fmax
+        noverlap = int(nperseg * 0.75)
         f, t, sxx = spectrogram(wave, fs=sampling_frequency,
-                                nperseg=nperseg,window='hann', scaling='spectrum')
+                                nperseg=nperseg, noverlap=noverlap, window='hann', scaling='spectrum')
     
         sxx_db = 10 * np.log10(sxx + 1e-12)
         mask = f <= fmax

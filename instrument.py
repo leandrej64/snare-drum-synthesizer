@@ -4,7 +4,9 @@ import numpy as np
 from scipy.io import wavfile
 from spec import Spectrogram
 
+
 class Instrument(ABC):
+
     def __init__(self, sampling_frequency=44100):
         self.sampling_frequency = sampling_frequency
         self.wave = None

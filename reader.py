@@ -1,7 +1,10 @@
 from instrument import Instrument
 from scipy.io import wavfile
 import numpy as np
+
+
 class Reader(Instrument): 
+    
     def __init__(self,filename):
             super().__init__()
             sampling_frequency, wave = wavfile.read(filename)

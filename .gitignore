@@ -1,3 +1,4 @@
 samples/
+figures/
 __pycache__/
 *.pyc
